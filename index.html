@@ -265,7 +265,7 @@ function requestMovie(data){
     var json = JSON.stringify(ticket);
     // console.log(json);
 
-    var requestObj = {send : json, url : 'http://nado.pp.ua/filiatix/movies.php', method : 'POST'};
+    var requestObj = {send : json, url : 'https://nado.pp.ua/filiatix/movies.php:8080', method : 'POST'};
 
     request(testReq, requestObj);
 
