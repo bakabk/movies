@@ -1,185 +1,184 @@
 * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-    }
-    
-    .clearfix:before,
-    .clearfix:after {
-        content: "";
-        display: table;
-    }
-    
-    .clearfix:after {
-        clear: both;
-    }
-    
-    .wrapper {
-        margin: 0 auto;
-        max-width: 800px;
-    }
-    
-    .form {
-        float: left;
-        border: 2px solid silver;
-        border-radius: 10px;
-        padding: 30px 20px 15px;
-        margin: 30px 10px 0;
-        position: relative;
-        width: 45%;
-    }
-    
-    .form__tittle {
-        position: absolute;
-        top: -15px;
-        left: 5px;
-        background-color: #008CFF;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 7px;
-        display: inline-block;
-        font-weight: 700;
-    }
-    
-    .form__movie_tittle {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-        border: 1px solid silver;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    
-    .form__movie_genre {
-        display: block;
-        margin-bottom: 20px;
-        min-width: 150px;
-        border: 1px solid silver;
-        padding: 5px;
-        border-radius: 5px;
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        background: url('../images/arrow_big.png') right no-repeat;
-    }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
 
-/*    .form__movie_genre:after {
-         content: "▼";
-         padding: 0 8px;
-         font-size: 12px;
-         position: absolute;
-         right: 8px;
-         top: 4px;
-         z-index: 1;
-         text-align: center;
-    }*/
-    
-    .form__movie_year {
-        display: block;
-        margin-bottom: 20px;
-        min-width: 150px;
-        border: 1px solid silver;
-        padding: 5px;
-        border-radius: 5px;
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        background: url('../images/arrow_big.png') right no-repeat;
-    }
-    
-    .form__movie_rate {
-        width: 100%;
-        margin-bottom: 30px;
-        width: 32px;
-        line-height: 32px;
-    }
-    
-    .form__movie_text {
-        float: left;
-    }
-    
-    .rate_background {
-        margin-left: 80px;
-        position: relative;
-        width: 160px;
-        height: 32px;
-        background: url('../images/star_gray.png') repeat-x;
-        cursor: pointer;
-    }
-    
-    .rate_bar {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        height: 32px;
-        background: url('../images/star_gold.png') repeat-x;
-    }
-    
-    .form__movie_submit {
-        background-color: #008CFF;
-        padding: 10px 20px;
-        border: 0px;
-        border-radius: 7px;
-        color: white;
-        float: right;
-        font-weight: 700;
-    }
-    /*------------------------------------*/
-    
-    .table__movies {
-        float: right;
-        border: 1px solid silver;
-        border-radius: 2px;
-        /*padding: 30px 20px 15px;*/
-        margin: 30px 10px 0;
-        /*position: relative;*/
-        width: 50%;
-        max-height: 800px;
-        overflow-y: auto;
-    }
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
 
-    .search-field{
-        width: 100%;
-    }
-    
-    #table__grid{
-        width: 100%;
-        border: 0px;
-        text-align: left;
-    }
+.clearfix:after {
+    clear: both;
+}
 
-    #table__grid thead{
-        background-color: #A7C942;
-        color: white;
-        line-height: 28px;
-        text-align: center;
-    }
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+}
 
-    #table__grid tr {
-        line-height: 28px;
-    }
+.form {
+    float: left;
+    border: 2px solid silver;
+    border-radius: 10px;
+    padding: 30px 20px 15px;
+    margin: 30px 10px 0;
+    position: relative;
+    width: 45%;
+}
 
-    #table__grid th {
-        cursor: pointer;
-    }
-    
-    #table__grid th:hover {
-        background: #008CFF;
-    }
+.form__tittle {
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    background-color: #008CFF;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 7px;
+    display: inline-block;
+    font-weight: 700;
+}
 
-    .table__grid__rate_background{
-        position: relative;
-        width: 90px;
-        height: 28px;
-        background: url('../images/star_gray_min.png') 0 3px repeat-x;
-    }
+.form__movie_tittle {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid silver;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-    .table__grid__rate_bar{
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        height: 28px;
-        background: url('../images/star_gold_min.png') 0 3px repeat-x;
-    }
+.form__movie_genre {
+    display: block;
+    margin-bottom: 20px;
+    min-width: 150px;
+    width: 200px;
+    max-width: 300px;
+    border: 1px solid silver;
+    padding: 5px;
+    border-radius: 5px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url('../images/arrow_big.png') right no-repeat;
+    text-transform: capitalize;
+
+}
+
+.form__movie_year {
+    display: block;
+    margin-bottom: 20px;
+    min-width: 150px;
+    width: 200px;
+    max-width: 300px;
+    border: 1px solid silver;
+    padding: 5px;
+    border-radius: 5px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url('../images/arrow_big.png') right no-repeat;
+}
+
+.form__movie_rate {
+    width: 100%;
+    margin-bottom: 30px;
+    width: 32px;
+    line-height: 32px;
+}
+
+.form__movie_text {
+    float: left;
+}
+
+.rate_background {
+    margin-left: 80px;
+    position: relative;
+    width: 160px;
+    height: 32px;
+    background: url('../images/star_gray.png') repeat-x;
+    cursor: pointer;
+}
+
+.rate_bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 32px;
+    background: url('../images/star_gold.png') repeat-x;
+}
+
+.form__movie_submit {
+    background-color: #008CFF;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 7px;
+    color: white;
+    float: right;
+    font-weight: 700;
+}
+
+
+/*------------------------------------*/
+
+.table__movies {
+    float: right;
+    border: 1px solid silver;
+    border-radius: 2px;
+    margin: 30px 10px 0;
+    width: 50%;
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.search-field {
+    width: 100%;
+    padding-left: 28px;
+    height: 28px;
+    background: url('../images/serch.png') 4px 3px no-repeat;
+    border: 1px solid silver;
+}
+
+#table__grid {
+    width: 100%;
+    border: 0px;
+    text-align: left;
+}
+
+#table__grid thead {
+    background-color: #A7C942;
+    color: white;
+    line-height: 28px;
+    text-align: center;
+}
+
+#table__grid tr {
+    line-height: 28px;
+}
+
+#table__grid th {
+    cursor: pointer;
+}
+
+#table__grid th:hover {
+    background: #008CFF;
+}
+
+.table__grid__rate_background {
+    position: relative;
+    width: 90px;
+    height: 28px;
+    background: url('../images/star_gray_min.png') 0 3px repeat-x;
+}
+
+.table__grid__rate_bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 28px;
+    background: url('../images/star_gold_min.png') 0 3px repeat-x;
+}
