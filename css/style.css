@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+}
+
+body{
     font-size: 14px;
 }
 
@@ -181,4 +184,39 @@
     left: 0px;
     height: 28px;
     background: url('../images/star_gold_min.png') 0 3px repeat-x;
+}
+
+@media all and (max-width : 800px) {
+    .wrapper {
+        margin: 0 auto;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .form {
+        width: 360px;
+        float: none;
+        margin: 30px 0 0;
+        display: inline-block;
+    }
+
+    .table__movies {
+        float: none;
+        margin: 30px 0 0;
+        width: 400px;
+        max-height: 400px;
+    }
+}
+
+@media all and (max-width : 480px) {
+    .form {
+        width: 300px;
+    }
+
+     .table__movies {
+        display: inline-block;
+        width: 300px;
+        max-height: 300px;
+        font-size: 10px;
+    }
 }
