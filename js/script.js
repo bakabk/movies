@@ -239,10 +239,10 @@ function requestMovie(data) {
     var requestObj = { send: json, url: 'http://nado.pp.ua/filiatix/movies.php', method: 'POST' };
 
     // Вызываем Ajax зпрос
-    request(testReq, requestObj);
+    request(movieReq, requestObj);
 
     // Ответ на Ajax запрос
-    function testReq(text) {
+    function movieReq(text) {
         var data = JSON.parse(text);
 
         // Полученные фильмы передаем в общий массив
@@ -253,5 +253,4 @@ function requestMovie(data) {
     };
 };
 
-// Бепем фильмы из базы
 requestMovie();
