@@ -167,6 +167,22 @@ body{
     cursor: pointer;
 }
 
+/*///////////////*/
+#table__grid .down:after {
+    font-size: 10px;
+    float: right;
+    padding-right: 3px;
+    content: "▼";
+}
+
+#table__grid .up:after {
+    font-size: 10px;
+    float: right;
+    padding-right: 3px;
+    content: "▲";
+}
+/*///////////////*/
+
 #table__grid th:hover {
     background: #008CFF;
 }

@@ -11,6 +11,8 @@ var moviesGenre = ['аниме', 'биографический', 'боевик',
 var dateNow = new Date();
 var yearNow = dateNow.getFullYear(); // сегодняшняя дата, из расчета что все фильмы добавленные в базу уже выпущены
 var firstMovie = 1895; // год первого созданного фильма
+
+var sort_down; // флаг сортировки столбца таблици
 ///////////////////////////////////////////////////////
 
 // Заполняем год и жанр в форме ввода
@@ -29,6 +31,8 @@ var firstMovie = 1895; // год первого созданного фильм�
 
 // Функция для заполнения таблици из базы фильмов
 function fillTableMovies(ObjMovies) {
+    removeClassTh();
+    
     var tbody = grid.getElementsByTagName('tbody')[0];
     grid.removeChild(tbody);
     tbody.innerHTML = '';
@@ -73,11 +77,33 @@ grid.onclick = function(e) {
     e = e || window.event;
     if (e.target.tagName != 'TH') return;
 
+    //Проверяем, отсортирована ли по убыванию наша колонка
+    sort_down = e.target.classList.contains('down');
+
+    removeClassTh();
+
+    if (!sort_down) {
+        e.target.classList.add('down');
+    } else {
+        e.target.classList.add('up');
+    };
+
     // Если TH -- сортируем
-    sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
+    sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'), sort_down);
 };
 
-function sortGrid(colNum, type) {
+function removeClassTh(){
+    var arrTh = grid.getElementsByTagName('TH');
+    arrTh = [].slice.call(arrTh);
+
+    //Убираем классы "сортировки"
+    arrTh.forEach( function(element, index) {
+        element.classList.remove('down');
+        element.classList.remove('up');
+    });
+}
+
+function sortGrid(colNum, type, sort) {
     var tbody = grid.getElementsByTagName('tbody')[0];
 
     // Составить массив из TR
@@ -89,17 +115,20 @@ function sortGrid(colNum, type) {
     switch (type) {
         case 'number':
             compare = function(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+                if (!sort) {return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;}
+                else {return rowB.cells[colNum].innerHTML - rowA.cells[colNum].innerHTML;}
             };
             break;
         case 'string':
             compare = function(rowA, rowB) {
-                return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+                if (!sort) {return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;}
+                else {return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? -1 : 1;}
             };
             break;
         case 'rate':
             compare = function(rowA, rowB) {
-                return rowA.cells[colNum].dataset.movie_rate > rowB.cells[colNum].dataset.movie_rate ? 1 : -1;
+                if (!sort) {return rowA.cells[colNum].dataset.movie_rate > rowB.cells[colNum].dataset.movie_rate ? 1 : -1;}
+                else {return rowA.cells[colNum].dataset.movie_rate > rowB.cells[colNum].dataset.movie_rate ? -1 : 1;}
             };
             break;
     }
